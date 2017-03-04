@@ -13,4 +13,4 @@ user guide
  the outcast noun will be shown in the output console see the pic below
  
  
- 
+ ![wordsemantics](https://cloud.githubusercontent.com/assets/11338579/23582207/d7f7bdba-012d-11e7-87bc-2678d0a2a2b2.PNG)

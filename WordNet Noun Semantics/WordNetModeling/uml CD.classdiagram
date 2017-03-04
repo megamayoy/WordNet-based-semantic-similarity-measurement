@@ -1,0 +1,202 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<logicalClassDesignerModel xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm4="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm5="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/ModelStore" dslVersion="1.0.0.0" Id="6aebb0c7-ddcb-4909-a726-30e77ca8cb41" name="WordNet Engine" linkedPackageId="a512e7e5-5f3c-40b5-b3bc-8352f5c8483d" xmlns="http://schemas.microsoft.com/dsltools/LogicalClassDesigner">
+  <ownedCommentsInternal>
+    <comment Id="fc9788c8-04f7-4a51-bca4-1e5fc8a2017c">
+      <elementDefinition Id="14aad08c-9dad-4ead-bee4-55d862bd00cf" />
+      <body>Implements The Directed Acyclic Graph Data Structure</body>
+    </comment>
+    <comment Id="e5a04f52-df80-479b-8c0a-6daf96819af5">
+      <elementDefinition Id="a281d91c-74da-42a7-ac5e-c2ec0651e4c4" />
+      <body>Applies Diffrent Methods To A Graph, such as validation, traversing, sca.</body>
+    </comment>
+    <comment Id="6b4f2ee5-0f52-442b-931d-24fa8da1909e">
+      <elementDefinition Id="45651995-962d-4e78-ac01-02303e0ad08e" />
+      <body>Represents the main interface to handle wordnet questions.</body>
+    </comment>
+  </ownedCommentsInternal>
+  <packagedElements>
+    <logicalClassDesignerModelHasTypes>
+      <class Id="8883cfec-406d-44ea-817a-f2f30e9019c3" name="DAG" isAbstract="false" isLeaf="false" isActiveClass="false">
+        <elementDefinition Id="5fbeb719-5cb6-4ab8-9eab-e7675ed8aaf9" />
+        <ownedAttributesInternal>
+          <property Id="f3cc3893-d9a7-4336-8486-d72ed52a588e" name="Graph" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="26f50f04-0922-4a6e-b2c6-df4467fcb465" />
+          </property>
+          <property Id="b1cd7f8f-7a9d-4dee-8f50-67380a7edd60" name="_nounMap" visibility="Private" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="5e1ebb31-f2e8-48aa-9da1-f18dd16b365f" />
+          </property>
+          <property Id="1014f44b-fb27-4a1d-b595-a3901982095c" name="_synsetsMap" visibility="Private" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="f895d7f0-2b0a-4817-a99e-75c37fad3a55" />
+          </property>
+        </ownedAttributesInternal>
+        <ownedOperationsInternal>
+          <operation Id="2f7d0f60-5ce0-4758-8142-713e057dc527" name="ConstructGraph" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="6481dede-3a02-49ae-b9e1-87c50fad859b" />
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="99d1fcb5-fe06-45a5-a726-43e7fd8a338c" name="int" direction="In" isUnique="false">
+                  <elementDefinition Id="11f81fab-d117-420a-be98-4833509908cb" />
+                </parameter>
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="f78a17d9-03aa-4ec1-b93c-cb7dfa0a5674" name="ProgressAction" direction="In">
+                  <elementDefinition Id="23fb35be-0084-4607-90de-be6ae8652c45" />
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+          <operation Id="93d8665e-d822-4a7d-8309-cbe6ad862072" name="DAG" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="3446591e-3ff2-4c59-a71d-a319a7600e6a" />
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="40152164-137c-4b8c-a96d-230760d7271f" name="string" direction="In" isUnique="false">
+                  <elementDefinition Id="b225181c-1f32-4425-9c83-2b20679f071b" />
+                </parameter>
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="b665645d-1e89-4c3c-afd8-5f17a5499451" name="ProgressAction" direction="In" isUnique="false">
+                  <elementDefinition Id="dca10115-2fd3-4dd0-a3ff-a3d9ba13c42e" />
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+          <operation Id="910d69df-42a3-4a25-a345-15606d5dc9ce" name="GetNoun" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="c0becbb5-cf6b-4d59-8d61-091a54c06cad" />
+          </operation>
+          <operation Id="352eb58d-4621-4c1a-82a0-303b79a8d009" name="GetParents" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="4b9f91de-23ee-4934-8094-6c22e1756c88" />
+          </operation>
+        </ownedOperationsInternal>
+      </class>
+    </logicalClassDesignerModelHasTypes>
+    <logicalClassDesignerModelHasTypes>
+      <class Id="92e55443-c497-4f5d-beec-c44d68741120" name="GraphProcessor" isAbstract="false" isLeaf="false" isActiveClass="false">
+        <elementDefinition Id="ca20a0b2-f7d3-4f14-9ce2-1ae6af75e6e6" />
+      </class>
+    </logicalClassDesignerModelHasTypes>
+    <logicalClassDesignerModelHasTypes>
+      <class Id="ce2f4bc9-f3eb-49c2-96b1-fc5fab35b777" name="WordNet" isAbstract="false" isLeaf="false" isActiveClass="false">
+        <elementDefinition Id="a147bfe7-a008-4eaf-8163-2ece344c2e4c" />
+        <suppliersInternal>
+          <dependency Id="687b536a-9f9f-488f-92ac-bf884f7a3f26">
+            <classMoniker Id="8883cfec-406d-44ea-817a-f2f30e9019c3" LastKnownName="DAG" />
+            <elementDefinition Id="881d45d3-8893-42f2-8536-02b5e74389f9" />
+          </dependency>
+          <dependency Id="c3e73467-0081-40e2-95dc-657ec20cae64">
+            <classMoniker Id="92e55443-c497-4f5d-beec-c44d68741120" LastKnownName="GraphProcessor" />
+            <elementDefinition Id="6c4232e6-4c94-49d7-8d49-e04b92bb620f" />
+          </dependency>
+        </suppliersInternal>
+        <ownedAttributesInternal>
+          <property Id="8904d67c-0ab1-4c1e-b5dd-0d488d28a5e7" name="_dataProcessor" visibility="Private" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="042ba162-e56f-438b-9b41-fb5f7e258d57" />
+          </property>
+          <property Id="30d833f9-01d9-423e-a329-a53004c9beae" name="_isInitialized" visibility="Private" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="3d2be852-ef7e-4c2c-9ebf-433796e077db" />
+          </property>
+          <property Id="6bf16829-176c-40e2-9c8f-0bd9fc035f5b" name="DataGraph" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="a65f1fec-ac44-498d-8fe2-3950078d1982" />
+          </property>
+        </ownedAttributesInternal>
+        <ownedOperationsInternal>
+          <operation Id="b6b4102d-515e-40f3-94ea-93a0f812b3c7" name="GetInputSize" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="3315acc5-534f-4efe-8186-836150666fe4" />
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="9809ec0a-7e68-4825-a012-ea1029d7d99d" direction="Return" isUnique="false">
+                  <elementDefinition Id="87deedb0-8c5c-4036-bec6-120c8144b4a4" />
+                  <type_NamedElement>
+                    <referencedTypeMoniker Id="8d291a45-ab23-423c-a01b-7e367b07ebcf" LastKnownName="int" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+          <operation Id="0ac5e884-d617-4b40-b7f1-9b8badb25395" name="GetSca" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="ed7ed548-f4d9-4df5-8252-5777dfe0eb2c" />
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="ad809f4f-b8bf-4592-84c2-bfb655e20ff9" direction="Return" isUnique="false">
+                  <elementDefinition Id="0d6afec0-5d80-44b1-a0f7-1a241f55107f" />
+                  <type_NamedElement>
+                    <referencedTypeMoniker Id="8d291a45-ab23-423c-a01b-7e367b07ebcf" LastKnownName="int" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="9cb7125b-dbd4-4de8-b520-4b02f1da57f9" name="in1" direction="In">
+                  <elementDefinition Id="103e7f15-f377-47c1-8707-0d180a2e5214" />
+                  <type_NamedElement>
+                    <referencedTypeMoniker Id="00e64750-d775-45d1-8c95-25af06f6071c" LastKnownName="Integer" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="b5fa6028-b873-4b7d-aa1f-c26f3f7d02df" name="in2" direction="In">
+                  <elementDefinition Id="c42b0242-79a4-4ae0-ba49-aff1404863f7" />
+                  <type_NamedElement>
+                    <referencedTypeMoniker Id="00e64750-d775-45d1-8c95-25af06f6071c" LastKnownName="Integer" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="33513458-015e-41dd-b91d-44a4856ece75" name="pathL" direction="Out">
+                  <elementDefinition Id="945446fd-b337-4064-9ebc-545e10be45a8" />
+                  <type_NamedElement>
+                    <referencedTypeMoniker Id="00e64750-d775-45d1-8c95-25af06f6071c" LastKnownName="Integer" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+          <operation Id="37b394db-59b2-41c4-94b7-89ca580b63e9" name="GetSca" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="0a2ebdb9-25fc-4f77-9075-15abaf2f799d" />
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="46a146ba-2790-4bb7-9bc7-713ddbb4d2d3" direction="Return" isUnique="false">
+                  <elementDefinition Id="54644e7e-598b-45eb-a918-0259d416580d" />
+                  <type_NamedElement>
+                    <referencedTypeMoniker Id="8d291a45-ab23-423c-a01b-7e367b07ebcf" LastKnownName="int" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+        </ownedOperationsInternal>
+      </class>
+    </logicalClassDesignerModelHasTypes>
+    <packageHasNamedElement>
+      <referencedType Id="8d291a45-ab23-423c-a01b-7e367b07ebcf" name="int" isAbstract="false" isLeaf="false" cachedFullName="int">
+        <elementDefinition Id="b3a3a812-9b65-47a6-8f6e-a9153d61df99" />
+      </referencedType>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <referencedType Id="00e64750-d775-45d1-8c95-25af06f6071c" name="Integer" isAbstract="false" isLeaf="false" cachedFullName="Integer">
+        <elementDefinition Id="220a3521-e091-4221-bae9-3ef9018e845c" />
+      </referencedType>
+    </packageHasNamedElement>
+  </packagedElements>
+  <package Id="a512e7e5-5f3c-40b5-b3bc-8352f5c8483d" name="WordNetModeling">
+    <elementDefinition Id="306b3906-f5d8-49e9-a66f-1af6373657a0" />
+    <profileInstances>
+      <packageHasProfileInstances Id="1ef7ed4a-d673-46ab-a6fc-2effef1e923b">
+        <profileInstance Id="44f97512-760f-4da4-9c13-711ebbd310a8" name="TextTemplateBindings">
+          <elementDefinition Id="978eec18-f2f5-49e6-90fc-599469d84e0a" />
+        </profileInstance>
+        <elementDefinition Id="9cdd43dd-0576-4834-af24-139a1a5a7a41" />
+      </packageHasProfileInstances>
+      <packageHasProfileInstances Id="8c02d0ec-ad68-4d22-8f7c-318ddebe32f4">
+        <profileInstance Id="4ea5acd5-8658-4c83-ada2-2b74234e9251" name="StandardProfileL2">
+          <elementDefinition Id="e34d544e-0fea-4ed6-ac5e-1b74119ac791" />
+        </profileInstance>
+        <elementDefinition Id="0caec977-1f8c-4ba3-a7db-8cc9ad9cc73b" />
+      </packageHasProfileInstances>
+      <packageHasProfileInstances Id="4a36f45f-6803-4ab9-8e10-a3dcf672c90e">
+        <profileInstance Id="6258e66d-1726-41c2-99b6-d5d90b9fe09c" name="StandardProfileL3">
+          <elementDefinition Id="532ea607-fb19-44b8-8502-3351b05452be" />
+        </profileInstance>
+        <elementDefinition Id="29349502-908c-4fda-9054-c48619c59ed0" />
+      </packageHasProfileInstances>
+    </profileInstances>
+  </package>
+</logicalClassDesignerModel>
